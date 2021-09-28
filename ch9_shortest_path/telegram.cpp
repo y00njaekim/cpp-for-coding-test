@@ -1,7 +1,9 @@
 #include <iostream>
 #include <vector>
+#include <queue>
 #define INF 1e9
-#define vvii vector<vector<pair<int, int> > >
+#define pii pair<int, int>
+#define vvii vector<vector<pii> >
 
 using namespace std;
 
@@ -9,6 +11,7 @@ int N, M, C;
 int d[30001];
 bool visited[30001];
 vvii graph;
+priority_queue<pii> pq;
 
 void dijkstra(int s) {
   fill(d, d+30001, INF);
@@ -17,26 +20,32 @@ void dijkstra(int s) {
   d[s] = 0;
   visited[s] = true;
   for(int i=0; i<graph[s].size(); i++) {
-    d[graph[s][i].first] = graph[s][i].second;    
+    d[graph[s][i].first] = graph[s][i].second;
+    pq.push(make_pair(-graph[s][i].second, graph[s][i].first));
   }
 
   for(int i=0; i<N-1; i++) {
     int min = INF;
     int minIndex = 0;
 
-    for(int j=1; j<N+1; j++) {
-      if(!visited[j] && d[j] < min) {
-        min = d[j];
-        minIndex = j;
+    int pqSize = pq.size();
+    for(int j=0; j<pqSize; j++) {
+      if(visited[pq.top().second]) {
+        pq.pop();
+      }
+      else {
+        min = -pq.top().first; 
+        minIndex = pq.top().second;
+        visited[minIndex] = true;
       }
     }
 
-    if(minIndex == 0) break;
-    else visited[minIndex] = true;
-
     for(int j=0; j<graph[minIndex].size(); j++) {
-      int cost = d[minIndex] + graph[minIndex][j].second;
-      if(cost < d[graph[minIndex][j].first]) d[graph[minIndex][j].first] = cost;
+      int cost = min + graph[minIndex][j].second;
+      if(cost < d[graph[minIndex][j].first]) {
+        d[graph[minIndex][j].first] = cost;
+        pq.push(make_pair(-cost, graph[minIndex][j].first));
+      }
     }
   }
 }
