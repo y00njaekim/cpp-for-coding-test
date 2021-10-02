@@ -25,3 +25,7 @@
   - `node` 사이의 거리에 대한 변수 명 `cost`
 
   - property 가 세개 이상인 자료 구조의 경우 구조체와 `compare` function 을 만들어서 `sort` 할 수 있지만 `pair<int, pair<int, int> >` 와 같이 pair 을 중첩해서 사용할 수도 있음을 기억!
+
+  - `parent[]` 는 `findParent()` 를 위한 수단일 뿐
+
+    - `if(findParent(graph[i].second.first) == findParent(graph[i].second.second)) continue;`  에서 `findParent()` 대신 `parent[]` 를 참조하는 식의 방법은 틀림!
