@@ -29,3 +29,22 @@
   - `parent[]` 는 `findParent()` 를 위한 수단일 뿐
 
     - `if(findParent(graph[i].second.first) == findParent(graph[i].second.second)) continue;`  에서 `findParent()` 대신 `parent[]` 를 참조하는 식의 방법은 틀림!
+
+<br/>
+
+- 커리큘럼
+
+  📌  Remember
+
+  - next node 를 check 할 때 시간비용 갱신하면 `graphIn` , `graphOut` 구분할 필요 없음
+
+    - ```cpp
+      int nextSize = graphOut[cur].size();
+      for(int j=0; j<nextSize; j++) {
+       // 여기서 갱신!! 
+      }
+      ```
+
+  ✔️   ToDoList
+
+  - `prevSize`, `graphIn` 따로 만들지 말고 문제 풀기
