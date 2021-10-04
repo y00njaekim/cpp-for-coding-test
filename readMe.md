@@ -4,6 +4,14 @@
 
 [Chapter10. 그래프](#chapter10.-그래프)
 
+#### 알고리즘 유형별 기출문제
+
+[Chapter11. 그리디문제](#chapter11.-그리디문제)
+
+---
+
+
+
 </br>
 
 #### Chapter9. 최단 경로
@@ -48,3 +56,25 @@
   ✔️   ToDoList
 
   - `prevSize`, `graphIn` 따로 만들지 말고 문제 풀기
+  
+  
+
+---
+
+
+
+#### Chapter11. 그리디문제
+
+- 모험가 길드
+
+  📌  Remember
+
+  - `priority_queue` 는 내림차순 정렬임을 기억!
+  - `while` 문의 조건문과 탈출문을 헷갈리지 말자
+    - `while(inGuild != maxGuild && !q.empty()) {` 에서 `&&` 과 `||` 중 당연히 `&&` 을 했어야 했는데.
+
+  ✔️   ToDoList
+
+  - 다음에는 `queue` 말고 `vector` 이용하기
+    - `queue.empty()` 와 `for` 문을 이용한 `vector` 의 순회는 둘 다 끝이 있다는 점에서 동일
+
