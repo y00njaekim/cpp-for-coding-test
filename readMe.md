@@ -76,5 +76,5 @@
   ✔️   ToDoList
 
   - 다음에는 `queue` 말고 `vector` 이용하기
-    - `queue.empty()` 와 `for` 문을 이용한 `vector` 의 순회는 둘 다 끝이 있다는 점에서 동일
+    - `while` 문의 조건으로 이용하는 `queue.empty()` 와 `for` 문을 이용한 `vector` 의 순회는 둘 다 끝이 있다는 점에서 동일
 
