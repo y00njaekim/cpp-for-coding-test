@@ -88,4 +88,4 @@
 
 
 
-- [무지의 먹방 라이브]()
+- [무지의 먹방 라이브](https://github.com/y00njaekim/cpp-for-coding-test/blob/master/ch11_greedy/eating_show.md)
