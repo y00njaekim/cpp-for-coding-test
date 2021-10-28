@@ -79,3 +79,28 @@
 
 
 - [무지의 먹방 라이브](https://github.com/y00njaekim/cpp-for-coding-test/blob/master/ch11_greedy/eating_show.md)
+
+---
+
+#### chapter12. 구현
+
+- 자물쇠와 열쇠
+
+  📌  Remember
+
+  - `vector` 초기화 방법
+
+    1. 5X5 Matrix 만들기: `vector<vector<int> > result(5, vector<int>(5))`
+    2. 0으로 초기화된 5X5 Matrix 만들기: `vector<vector<int> > result(5, vector<int>(5, 0))`
+
+  - Matrix 90도 회전 방법: 1. transpose 2. 행기준 뒤집기
+
+    ```cpp
+    for(int r=0; r<행길이; r++) {
+        for(int c=0; c<열길이; c++) {
+            res[c][열길이-1-r] = v[r][c]; // r, c -> c, r -> c, vSize-1-r
+        }
+    }
+    ```
+
+    
