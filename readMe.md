@@ -157,3 +157,18 @@
   - 벽 등의 구조물을 배열로 구현할 때, `segmentation fault` 유의하기
     - `if` 문과 `continue` 잘 이용하기
     - 배열 크기 가로 세로 세 배 해서 가운데 배열만 이용하기
+  
+- 조합
+
+  📌  Remember
+
+  - [조합 참고 블로그](https://cutemoomin.tistory.com/entry/c-nextpermutation-%EC%A1%B0%ED%95%A9-%EA%B5%AC%ED%95%98%EA%B8%B0) (`next_permutation`  사용) (블로그와 나동빈님 코드는 아래 부분에서 다름)
+
+    - [사용 시 주의사항](https://mjmjmj98.tistory.com/38) (ex. **오름차순으로 정렬**된 경우만 사용 가능) ➡️ 원리도 이와 유사할 것이라 추측
+
+    ```cpp
+    vector<bool> binary(chicken.size());
+    fill(binary.end() - m, binary.end(), true);
+    ```
+
+  - `int min = *min_element(vec.begin(), vec.end());`
