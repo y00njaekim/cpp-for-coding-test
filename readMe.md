@@ -1,16 +1,20 @@
 ## 목차
 
-[Chapter9. 최단 경로](#chapter9.-최단-경로)
+[Chapter9. 최단 경로](#chapter9-최단-경로)
 
-[Chapter10. 그래프](#chapter10.-그래프)
+[Chapter10. 그래프](#chapter10-그래프)
 
 #### 알고리즘 유형별 기출문제
 
-[Chapter11. 그리디문제](#chapter11.-그리디문제)
+[Chapter11. 그리디문제](#chapter11-그리디문제)
+
+[Chapter12. 구현](#chapter12-구현)
+
+[Chapter13. DFS BFS](#chapter13-dfs-bfs)
 
 ---
 
-#### Chapter9. 최단 경로
+#### Chapter9 최단 경로
 
 - 전보
 
@@ -20,7 +24,7 @@
 
 <br/>
 
-#### Chapter10. 그래프
+#### Chapter10 그래프
 
 - 크루스칼
 
@@ -55,7 +59,7 @@
   
 ---
 
-#### Chapter11. 그리디문제
+#### Chapter11 그리디문제
 
 - 모험가 길드
 
@@ -80,9 +84,9 @@
 
 - [무지의 먹방 라이브](https://github.com/y00njaekim/cpp-for-coding-test/blob/master/ch11_greedy/eating_show.md)
 
----
+<br/>
 
-#### chapter12. 구현
+#### chapter12 구현
 
 - 자물쇠와 열쇠
 
@@ -164,15 +168,88 @@
 
   - [조합 참고 블로그](https://cutemoomin.tistory.com/entry/c-nextpermutation-%EC%A1%B0%ED%95%A9-%EA%B5%AC%ED%95%98%EA%B8%B0) (`next_permutation`  사용) (블로그와 나동빈님 코드는 아래 부분에서 다름)
 
-    - [사용 시 주의사항](https://mjmjmj98.tistory.com/38) (ex. **오름차순으로 정렬**된 경우만 사용 가능) ➡️ 원리도 이와 유사할 것이라 추측
-
     ```cpp
     vector<bool> binary(chicken.size());
     fill(binary.end() - m, binary.end(), true);
     ```
 
+    [사용 시 주의사항](https://mjmjmj98.tistory.com/38) (ex. **오름차순으로 정렬**된 경우만 사용 가능) ➡️ 원리도 이 '오름차순' 과 연관이 있을 것이라 추측
+
   - `int min = *min_element(vec.begin(), vec.end());`
-  
+
 - 외벽 점검
 
   - **너무 어려워서 일단 스킵 다음에 다시 트라이**
+
+<br/>
+
+#### Chapter13 DFS BFS
+
+- 특정 거리의 도시 찾기
+
+  📌  Remember
+
+  - 내가 생각한 결과와 답이 다를 때 적극적으로 디버깅하기
+    - 적극적 디버깅이란 console print out 많이 해보기 & 손으로 그려가며 따라가기
+    - 이 문제도 DFS 로 접근했다가 그림그려보니까 바로 BFS 인거 깨달음
+  - **Depth 판단은 BFS 로 해야한다!**
+    - DFS 로 하면 depth 가 깊어도 일단 들어간 다음 `visited = true` 처리 되므로 실제의 depth 판단하기 위한 접근 과정에서 `visited == true` 조건에 막혀 접근 못함
+  - `visited == false` 판단하는 타이밍 & `visited = true` 할당하는 타이밍
+    -  `visited == false` 판단하는 타이밍
+      - 입국 심사라고 생각하자. 해당 노드가 `queue` 에 들어와도 될지 안될지 판단하는 순간에서 검사하자.
+    - `visited = true` 할당하는 타이밍
+      - `queue` 라는 국가에 입국했다고 생각하자.
+        - ❌ (이 타이밍 아님) 해당 노드가 찐 주인공이 되는 순간 = 그 노드의 `adj` 를 판단하기 위해 주목해주는 순간.
+        - ⭕ (이 타이밍 맞음) 해당 노드가 `queue` 에 들어온 직후의 순간.
+
+- 연구소
+
+  📌  Remember
+
+  - DFS 혹은 BFS 의 **매개변수**로 대개 **시작 노드**가 들어가야 한다.
+
+  - 상 하 좌 우 대각 뒤질 때 `seg fault` 주의하자!!
+
+  - 상 하 좌 우 는 `(0, 1), (0, -1), (1, 0), (-1, 0)` 이다. `(1, 1), (-1, 1), (1, -1), (-1, -1)` 이 아니다.
+
+  - 2차원 배열의 열과 행을 1차원 배열에서 결정할 때 1차원 배열의 인덱스를 2차원 배열의 **column num** 으로 나누어야 한다.
+
+    ```cpp
+    for(int i=0; i<N*M; i++) {
+    	if(binary[i]) {
+    		int _r = i / M;
+    		int _c = i % M;
+    		cand.push_back(make_pair(_r, _c));
+    	}
+    ```
+
+  - DFS 할 때 next node 표현
+
+    - 나동빈 님
+
+      ```cpp
+      void virus(int x, int y) {
+          for (int i = 0; i < 4; i++) {
+              int nx = x + dx[i];
+              int ny = y + dy[i];
+      ```
+
+    - 나
+
+      ```cpp
+      for(int i=0; i<4; i++) {
+          pii next = make_pair(X.first+dx[i], X.second+dy[i]);
+      ```
+
+    `nx` `ny` 가 더 좋은 표현인 것 같다.
+
+  - [DFS BFS 시간 복잡도](https://velog.io/@kjh107704/%EA%B7%B8%EB%9E%98%ED%94%84-BFS%EC%99%80-DFS)
+
+  <br/>
+
+  ✔️   ToDoList
+
+  - 사실 `visited` 가 필요 없는 문제 -> 다음에는 `visited ` 안 쓰고 풀기
+  - 조합을 이용해 울타리 설치하는 방법 아주 좋았음. 다음에는 `DFS` 를 이용하여 울타리 설치하기.
+    - 어떻게 보면 조합이랑 `DFS` 랑 느낌이 살짝 유사한 감이 있네 ??
+
