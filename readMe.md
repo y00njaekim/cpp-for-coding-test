@@ -258,3 +258,11 @@
   📌  Remember
 
   - 구조체 `operator` override 하는 방법 (출처: [나동빈님 깃허브](https://github.com/ndb796/python-for-coding-test/blob/master/13/3.cpp))
+
+- 연산자 끼워 넣기
+
+  📌  Remember
+
+  - **DFS BFS 는 본질적으로 완전탐색이다.**
+
+  
