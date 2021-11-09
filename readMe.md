@@ -300,3 +300,18 @@
   📌  Remember
 
   - 상하좌우 + 특정 조건으로 adjacent 판단할 때는 미리 만들 필요가 없다. 그냥 바로 판단하자
+
+- 블럭 이동하기
+
+  📌  Remember
+
+  - [[나동빈님 코드]](https://github.com/ndb796/python-for-coding-test/blob/master/13/8.cpp) 를 살펴보면
+    - bfs 코드를 작성할 때 adjcent 만드는 function `getNextPos()` 코드를 따로 작성하였다. 이 때, `getNexPos()` 의 반환형은 `vector<Node> nextPos` 로 `getNextPos()` 밖의 bfs 에서 `for(int i=0; i<nextPos.size(); i++)` 를 이용해서 adjacent 에 접근한다.
+    - adjcent 를 만들 때는 `visited` 여부를 판단하지 않는다. `visited` 판단은 만들어진 adjcent 를 `for` 문을 통해 접근하는과정에서 발생한다. 
+    - **나의 코드와의 차이** ) 나는 `visited` 를 따로 고려하지 않았다. 사실 이래도 시간이 오래 걸릴 뿐 문제가 풀리긴 한다. 하지만 depth 가 1만큼 깊어질 때 마다 가능한 adj 의 최대 크기만큼, 즉 8 배만큼 늘어난다.
+    - `visited` 를 기존과 같이 작성할 수 없다. 즉 bool 형태의 2차원 배열로서 `visited` 를 만들 수 없다. 때문에 그냥 vector 형태로 만들어 방문한 노드를 vector 에 push 한 다음, 특정 노드의 `visited` 여부를 판단하려 할 때, linear search 하며 같은 element 가 있는지 판단하면 된다.
+
+  ✔️   ToDoList
+
+  - 틀렸음. 못풀었음. 틀린 코드 github 에 푸쉬 해놨으니, 일단 프로그래머스로 다시 풀고 나서 내가 작성한 코드의 틀린 이유 꼭 알아내기.
+
