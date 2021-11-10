@@ -1,4 +1,8 @@
-#include <bits/stdc++.h>
+//#include <bits/stdc++.h>
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <vector>
 
 using namespace std;
 
@@ -27,7 +31,7 @@ public:
         }
         if (this->kor == other.kor && this->eng == other.eng) {
             return this->m > other.m;
-       }
+        }
         if (this->kor == other.kor) {
             return this->eng < other.eng;
         }
@@ -55,4 +59,4 @@ int main(void) {
     for (int i = 0; i < n; i++) {
         cout << v[i].name << '\n';
     }
-} 
+}
