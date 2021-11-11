@@ -326,6 +326,14 @@
   - struct 정렬 [[참고]](https://it-earth.tistory.com/129) vs class 정렬 [[참고]](https://github.com/ndb796/python-for-coding-test/blob/master/14/1.cpp)
   - `endl` **절 대 쓰 지 마.** `'/n'` **절 대 써.**
 
-- ✔️   ToDoList
+  ✔️   ToDoList
 
   - class 정렬 코드 mac terminal g++ 쓰니까 안됨. 컴파일러 버전, c++ 버전 문제 해결 필요
+
+- 안테나
+
+  📌  Remember
+
+  - 나 통계 이해 부족한 듯. 원래 중앙값 유래가 모든 통계값과 참값의 오차 합의 최소가 되는 값이래.. [[중앙값 설명 유튜브]](https://www.youtube.com/watch?v=UiVL9k0XbY8)
+
+    
