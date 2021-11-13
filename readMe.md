@@ -12,7 +12,9 @@
 
 [Chapter13. DFS BFS](#chapter13-dfs-bfs)
 
-[Chapter14. 정렬](#chapter9-정렬)
+[Chapter14. 정렬](#chapter14-정렬)
+
+[Chapter15. 이진탐색](#chapter15-이진탐색)
 
 ---
 
@@ -341,3 +343,16 @@
   📌  Remember
 
   - 문제에서 준 크기 `N` 으로 `vector` `resize` 했을 때, 그 값 참조하려면 `v.size()` 처럼 쓰지 말고 그냥 `N` 으로 쓰기
+
+#### Chapter15 이진탐색
+
+- 정렬된 배열에서 특정 수의 개수 구하기
+
+  📌  Remember
+
+  - `<algorithm>` 에 `upper_bound` 와 `lower_bound` 라는 함수가 있음.
+  - 유튜브 횡설수설 [[링크]](https://youtu.be/tkWW6ZcD7Rs)
+
+  ✔️   ToDoList
+
+  - `<algorithm>` 에 `upper_bound` 와 `lower_bound` 라는 함수 사용해서 풀기.
