@@ -16,6 +16,8 @@
 
 [Chapter15. 이진탐색](#chapter15-이진탐색)
 
+[Chapter16. 다이나믹 프로그래밍](#chapter16-다이나믹-프로그래밍)
+
 ---
 
 #### Chapter9 최단 경로
@@ -424,3 +426,19 @@
 
   - c++ method 
   - `upper_bound`, `lower_bound`, `find`, `replace`, `reverse` 이용해서 풀기
+
+#### Chapter16 다이나믹 프로그래밍
+
+- 정수 삼각형
+
+  📌  Remember
+
+  - dpTable 만들 때 예외 처리 방법 (`segmentation fault` 등 주의)
+
+    1. 삼중 `for` 문 + `continue`
+
+       🔑 보다 작은 문제를 살펴볼 때, 즉 dpTable 에서 이전 값들을 참조할 때 값들을 `for` 문을 이용하여 참조하기 [[예시]](https://github.com/y00njaekim/cpp-for-coding-test/blob/master/ch16_dp/gold.cpp)
+
+    2. 이중 `for` 문 + `if`
+
+       🔑 dpTable 에서 참조할 변수가 `segmentation fault` 를 일으킬 가능성이 없으면 그냥 참조. 있으면 `0` 으로 선언 [[예시]](https://github.com/y00njaekim/cpp-for-coding-test/blob/master/ch16_dp/tri.cpp)
