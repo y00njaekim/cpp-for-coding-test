@@ -442,3 +442,13 @@
     2. 이중 `for` 문 + `if`
 
        🔑 dpTable 에서 참조할 변수가 `segmentation fault` 를 일으킬 가능성이 없으면 그냥 참조. 있으면 `0` 으로 선언 [[예시]](https://github.com/y00njaekim/cpp-for-coding-test/blob/master/ch16_dp/tri.cpp)
+
+- 퇴사
+
+  📌  Remember
+
+  - DP 문제 전반적인 아이디어 [[링크]](https://y00njaekim.github.io/algorithm/%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/)
+  
+  - DP 점화식 세웠을 때 그거의 정당성을 꼭 생각해 보아야 함
+    - 흔히 실수할 수 있는 케이스에 대해 주저리주저리 [[유튜브]](https://youtu.be/7z_YHI7P0t4)
+  - `bottomOne` `topOne` 이라는 변수명 괜찮은 듯
