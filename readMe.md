@@ -448,7 +448,7 @@
   📌  Remember
 
   - DP 문제 전반적인 아이디어 [[링크]](https://y00njaekim.github.io/algorithm/%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/)
-  
+
   - DP 점화식 세웠을 때 그거의 정당성을 꼭 생각해 보아야 함
     - 흔히 실수할 수 있는 케이스에 대해 주저리주저리 [[유튜브]](https://youtu.be/7z_YHI7P0t4)
   - `bottomOne` `topOne` 이라는 변수명 괜찮은 듯
@@ -460,4 +460,11 @@
   - **최장 증가 부분 수열 이라는 다이나믹 프로그래밍** 유형
     - dp[i] = array[i] 를 마지막 원소로 가지는 부분 수열의 최대 길이
     - 모든 0 <= j < i 에 대하여 dp[i] = max(dp[i], dp[j]+1) if array[j] < array[i]
+  - 파악하기 어려운 Dp 문제의 특징 : `dp[i]` = `func(dp[i-1], dp[i-2])` 등 이 아니라 `func(dp[j]), j=1, 2, ... , i-1` 과 같은 식일 때. 즉 직전의 작은 문제가 아니라 어느 작은 문제로부터 파생될지 모를 때.
+
+- 편집 거리
+
+  📌  Remember
+
+  - 이차원 배열로 만든 dpTable ..
 
