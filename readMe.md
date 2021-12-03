@@ -18,6 +18,8 @@
 
 [Chapter16. 다이나믹 프로그래밍](#chapter16-다이나믹-프로그래밍)
 
+[Chapter17. 최단경로](#chapter17 최단경로)
+
 ---
 
 #### Chapter9 최단 경로
@@ -468,3 +470,10 @@
 
   - 이차원 배열로 만든 dpTable ..
 
+#### Chapter17 최단경로
+
+- 플로이드
+
+  📌  Remember
+
+  - 플로이드 알고리즘에 대한 오해와 정당성 확보의 직관적 느낌 [[유튜브]](https://y00njaekim.github.io/algorithm/%ED%94%8C%EB%A1%9C%EC%9D%B4%EB%93%9C%EC%9B%8C%EC%85%9C/)
