@@ -18,7 +18,7 @@
 
 [Chapter16. 다이나믹 프로그래밍](#chapter16-다이나믹-프로그래밍)
 
-[Chapter17. 최단경로](#chapter17 최단경로)
+[Chapter17. 최단경로](#chapter17-최단경로)
 
 ---
 
@@ -477,3 +477,34 @@
   📌  Remember
 
   - 플로이드 알고리즘에 대한 오해와 정당성 확보의 직관적 느낌 [[유튜브]](https://y00njaekim.github.io/algorithm/%ED%94%8C%EB%A1%9C%EC%9D%B4%EB%93%9C%EC%9B%8C%EC%85%9C/)
+
+- 숨바꼭질
+
+  📌  Remember
+
+  - **다익스트라 알고리즘** 유의사항
+
+    - 최단경로의 길이 `vector` 변수명 : `d`
+
+    - `priority_queue` 이용할 때 `-` 부호는 항상 유의하자
+
+    - `adj` : 그래프 인접 노드 정보가 들어간 `vector<vector<int> >` 가 존재한다.
+
+    - 초기값 설정할 때 `priority_queue` 와 `d` 모두 이용해 주어야 함
+
+      ```cpp
+      pq.push({0, start});
+      d[start] = 0;
+      ```
+
+    - 갱신 가능성을 바탕으로 `visited` 대체할 때 부등호의 등호 포함 여부는 매우 중요
+
+      ```cpp
+      if (d[now] < dist) continue; // O
+      
+      if (d[now] <= dist) continue; // X
+      ```
+
+      왜냐하면 이렇게 했을 때 초기값을 넣은 `pq.top().second(=dist)` 이 `d[now]` 와 같기 때문에 처음부터 `continue` 가 발생하여 `while` 문이 `pq.empty()` 에 의해 종료된다.
+
+    - `pq.push()` 타이밍에 관하여. 최단거리 확정 순간의 선행 조건은 해당 노드가 `pq` 에 들어와 있다는 것이다. 즉 최단거리 확정 순간에서 `pq.push()` 를 해야하나 고민하는 것은 말도 안된다. `pq.push()` 의 타이밍은 `adj` 를 검사하는 순간이다.
