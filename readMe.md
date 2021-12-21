@@ -20,6 +20,8 @@
 
 [Chapter17. 최단경로](#chapter17-최단경로)
 
+[Chapter18. 그래프](#chapter18-그래프)
+
 ---
 
 #### Chapter9 최단 경로
@@ -508,3 +510,17 @@
       왜냐하면 이렇게 했을 때 초기값을 넣은 `pq.top().second(=dist)` 이 `d[now]` 와 같기 때문에 처음부터 `continue` 가 발생하여 `while` 문이 `pq.empty()` 에 의해 종료된다.
 
     - `pq.push()` 타이밍에 관하여. 최단거리 확정 순간의 선행 조건은 해당 노드가 `pq` 에 들어와 있다는 것이다. 즉 최단거리 확정 순간에서 `pq.push()` 를 해야하나 고민하는 것은 말도 안된다. `pq.push()` 의 타이밍은 `adj` 를 검사하는 순간이다.
+
+#### Chapter17 최단경로
+
+- 탑승구
+
+  📌  Remember
+
+  - 이걸 union-find 자료구조로 해결하네 대박.
+
+- 어두운 길
+
+  📌  Remember
+
+  - 크루스칼 알고리즘 할 때 굳이 priority_queue 를 쓸 필요가 없네. 그냥 vector 로 하나하나 다 체크하면 됨.
