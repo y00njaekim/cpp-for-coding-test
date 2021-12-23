@@ -524,3 +524,34 @@
   📌  Remember
 
   - 크루스칼 알고리즘 할 때 굳이 priority_queue 를 쓸 필요가 없네. 그냥 vector 로 하나하나 다 체크하면 됨.
+
+- 탑승구
+
+  📌  Remember
+
+  - **와 이걸 위상 정렬을 사용해서 푸네**
+
+    🔥 직관 🔥
+
+    - 위상 정렬 그래프를 잘 보면
+      <img src="https://user-images.githubusercontent.com/56385667/147236128-6c2c9a0f-290a-4418-a6a7-576f55b16338.png"/>
+      자료구조가 알고리즘의 선수 과목이고,
+      알고리즘이 고급 알고리즘의 선수 과목이라,
+      자연스레 자료구조가 고급 알고리즘의 선수과목이 되는 느낌을 기억해야 함
+    - 특정 행동을 1등이 해야 2등이 할 수 있고, 2등이 해야 3등이 할 수 있는 구조. ➡️ 여기서는 1등이 출력되어야 2등이 출력될 수 있고, 2등이 출력되어야 3등이 출력될 수 있는 구조로 생각하자.
+
+  - `vector` `erase` **사용 방법**
+
+    ```cpp
+    	iterator erase( iterator pos );
+    
+      v.erase(v.begin() + index);
+    ```
+
+  - **위상정렬 Detail**
+
+    1. 가장 기본적인 위상정렬 형태 🔑 `while` 문의 조건으로 `!q.empty()` 이용 [[코드]](https://github.com/ndb796/python-for-coding-test/blob/master/10/6.cpp)
+    2. 이 문제에서 모범적인 위상정렬 형태 🔑 정확하게 노드 개수만큼 `for` 문 돌리는 방법 이용 [[코드]](https://github.com/ndb796/python-for-coding-test/blob/master/18/5.cpp)
+       1. 위상 정렬에서 말하는 cycle : 이러지도 저러지도 못하는 상태 ➡️ `ind == 0` 인게 없는 상황
+    3. 내 코드 🔑 이유 없는 `do-while` 문 사용 [[코드]](https://github.com/y00njaekim/cpp-for-coding-test/blob/master/ch18_graph/rank.cpp)
+       1. `do-while` 문과 `while` 문의 차이는 딱 첫 번째 케이스에서 `while` 문 조건을 만족하냐 하지 않냐 의 차이. 내 코드의 경우 `do-while` 을 쓸 이유가 전혀 없음
